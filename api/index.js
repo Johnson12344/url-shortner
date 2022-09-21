@@ -1,14 +1,14 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const logger = require('./middlewares/logger')
+const logger = require('../middlewares/logger')
 const genrateSlug = require('../middlewares/generateSlug')
 
-const data = []
 
 app.use(logger)
 app.use(express.urlencoded({extended: false }));
 app.use(express.json());
+const data = []
 app.get('/', (req,res)=>{
     const filePath = path.join(__dirname, "../index.html")
     res.sendFile(filePath)
