@@ -9,7 +9,6 @@ const data = []
 app.use(logger)
 app.use(express.urlencoded({extended: false }));
 app.use(express.json());
-app.use(express.static('low'))
 app.get('/', (req,res)=>{
     const filePath = path.join(__dirname, "../index.html")
     res.sendFile(filePath)
